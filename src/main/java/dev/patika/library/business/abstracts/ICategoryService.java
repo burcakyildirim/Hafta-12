@@ -8,6 +8,6 @@ public interface ICategoryService {
     Category getById(int id);
     Category save(Category category);
     Category update(Category category);
-    void delete(int id);
+    boolean delete(int id);
     List<Category> findAll();
 }
