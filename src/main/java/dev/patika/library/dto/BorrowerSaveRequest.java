@@ -4,13 +4,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class BookSaveRequest {
+public class BorrowerSaveRequest {
     private String name;
-    private int publicationYear;
-    private int stock;
-    private int author_id;
-    private int publisher_id;
+    private LocalDate onDate;
+    private LocalDate date;
+    private int book_id;
 }
