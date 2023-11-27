@@ -3,6 +3,7 @@ package dev.patika.library.api;
 import dev.patika.library.business.abstracts.IBorrowingService;
 import dev.patika.library.dto.BorrowerSaveRequest;
 import dev.patika.library.dto.BorrowerUpdateRequest;
+import dev.patika.library.entities.Book;
 import dev.patika.library.entities.Borrowing;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +38,9 @@ public class BorrowingController {
     @ResponseStatus(HttpStatus.CREATED)
     public Borrowing save(@RequestBody BorrowerSaveRequest borrowerSaveRequest) {
         Borrowing newBorrow = this.modelMapper.map(borrowerSaveRequest,Borrowing.class);
+        Book book = new Book();
+        book.setId((long) borrowerSaveRequest.getBook_id());
+        newBorrow.setBook(book);
         return this.borrowingService.save(newBorrow);
     }
 

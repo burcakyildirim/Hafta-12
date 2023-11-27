@@ -3,7 +3,9 @@ package dev.patika.library.api;
 import dev.patika.library.business.abstracts.IBookService;
 import dev.patika.library.dto.BookSaveRequest;
 import dev.patika.library.dto.BookSaveRespond;
+import dev.patika.library.entities.Author;
 import dev.patika.library.entities.Book;
+import dev.patika.library.entities.Publisher;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,6 +42,16 @@ public class BookController {
     @ResponseStatus(HttpStatus.CREATED)
     public Book save(@RequestBody BookSaveRequest bookSaveRequest) {
         Book newBook = this.modelMapper.map(bookSaveRequest,Book.class);
+
+        /*Author author = new Author();
+        author.setId((long) bookSaveRequest.getAuthor_id());
+        newBook.setAuthor(author);
+
+        Publisher publisher = new Publisher();
+        publisher.setId((long) bookSaveRequest.getPublisher_id());
+        newBook.setPublisher(publisher);
+
+         */
         return this.bookService.save(newBook);
     }
 

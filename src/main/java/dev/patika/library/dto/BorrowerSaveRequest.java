@@ -1,5 +1,6 @@
 package dev.patika.library.dto;
 
+import dev.patika.library.entities.Book;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

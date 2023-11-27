@@ -1,5 +1,7 @@
 package dev.patika.library.dto;
 
+import dev.patika.library.entities.Author;
+import dev.patika.library.entities.Publisher;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +13,6 @@ public class BookSaveRequest {
     private String name;
     private int publicationYear;
     private int stock;
-    private int author_id;
-    private int publisher_id;
+    private Author author;
+    private Publisher publisher;
 }
